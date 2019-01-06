@@ -1,7 +1,6 @@
 import { InjectionToken, TemplateRef } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 export interface INgxCrumbsConfig {
-  handleWindowTitle: boolean;
   windowTitleSeparator: string;
 }
 

@@ -1,7 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ObserversModule } from '@angular/cdk/observers';
 
 import { NgxCrumbsComponent } from './ngx-crumbs.component';
 import { NGX_CRUMBS_CONFIG, INgxCrumbsConfig } from './shared';
@@ -10,7 +9,6 @@ import { NgxCrumbsService } from './ngx-crumbs.service';
 import { NgxCrumbDirective } from './ngx-crumb.directive';
 
 const defaultConfig: INgxCrumbsConfig = {
-  handleWindowTitle: true,
   windowTitleSeparator: ' | '
 };
 @NgModule({
@@ -22,7 +20,6 @@ const defaultConfig: INgxCrumbsConfig = {
   imports: [
     CommonModule,
     RouterModule,
-    ObserversModule
   ],
   exports: [
     NgxCrumbsComponent,

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+
+
+# bump the version
+cd projects/ngx-crumbs
+VERSION="$(npm version patch)"
+cd ../..
+
+# build the lib
+ng build ngx-crumbs
+cp README.md LICENSE dist/ngx-crumbs/
+
+# build the demo
+ng build ngx-crumbs-demo  --prod --aot --baseHref /ngx-crumbs/
+
+# build the docs
+compodoc  -p projects/ngx-crumbs/tsconfig.lib.json  --disableCoverage --output docs/docs
+
+
+
+
+# publish to NPM
+cd dist/ngx-crumbs
+npm publish --access public
+cd ../..
+
+
+# commit with tag
+git add -A
+git commit -m "published version ${VERSION} to npm"
+git tag  $VERSION
+git push
+git push --tags

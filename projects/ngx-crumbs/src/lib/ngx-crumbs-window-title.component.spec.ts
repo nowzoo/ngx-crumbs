@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NGX_CRUMBS_CONFIG, INgxCrumbsConfig } from './shared';
 import { RouterModule } from '@angular/router';
 import { NgxCrumbsWindowTitleComponent } from './ngx-crumbs-window-title.component';
@@ -18,7 +18,7 @@ describe('NgxCrumbsWindowTitleComponent', () => {
   beforeEach(() => {
     crumbs$ = new BehaviorSubject([]);
     service = {crumbs$: crumbs$.asObservable()};
-    config = {windowTitleSeparator: ' | ', handleWindowTitle: true};
+    config = {windowTitleSeparator: ' | '};
     title = {setTitle: jasmine.createSpy()};
     TestBed.configureTestingModule({
       declarations: [ NgxCrumbsWindowTitleComponent ],

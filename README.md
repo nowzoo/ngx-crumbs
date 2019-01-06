@@ -1,27 +1,66 @@
-# NgxCrumbs
+# @nowzoo/ngx-crumbs
+
+Breadcrumbs and window title for Angular apps.
+
+[Demo](https://nowzoo.github.io/ngx-crumbs/)
+|
+[Demo Source Code](https://github.com/nowzoo/ngx-crumbs/tree/master/projects/ngx-crumbs-demo/src/app)
+
+[Documentation](https://nowzoo.github.io/ngx-crumbs/docs/)
+
+
+## Quick start
+
+```bash
+npm i @nowzoo/ngx-crumbs --save
+```
+
+Import the module...
+```typescript
+import { NgxCrumbsModule } from '@nowzoo/ngx-crumbs';
+@NgModule({
+  imports: [
+    NgxCrumbsModule.forRoot()
+  ],
+})
+export class AppModule { }
+```
+
+Add breadcrumbs to your route components using `ng-template` and the `ngxCrumb` directive. The content of the crumb can be dynamic...
+```html
+<ng-template ngxCrumb>Dynamic: {{counter}}</ng-template>
+```
+
+To have the crumbs automatically update the window title, add the `NgxCrumbsWindowTitleComponent` to your app component...
+
+```html
+<ngx-crumbs-window-title></ngx-crumbs-window-title>
+```
+
+To display Bootstrap breadcrumbs, use `NgxCrumbsComponent`...
+
+```html
+<ngx-crumbs></ngx-crumbs>
+```
+
+## Contributing
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
-## Development server
+`git clone https://github.com/nowzoo/ngx-crumbs.git`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The library code is in `projects/ngx-crumbs`.
 
-## Code scaffolding
+The demo is in `projects/ngx-crumbs-demo`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Build the library: `ng build ngx-crumbs`
 
-## Build
+Serve the demo locally:  `ng serve ngx-crumbs-demo`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Unit tests
 
-## Running end-to-end tests
+Run `ng test ngx-crumbs` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The library tests can also be run with Wallaby. Select the `wallaby.js` file in `projects/ngx-crumbs`.
