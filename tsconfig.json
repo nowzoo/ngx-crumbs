@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@nowzoo/ngx-crumbs": [
+        "dist/ngx-crumbs"
+      ],
+      "@nowzoo/ngx-crumbs/*": [
+        "dist/ngx-crumbs/*"
+      ]
+    }
   }
 }
